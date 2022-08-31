@@ -9,13 +9,17 @@ MLflow is an open-source product designed to manage the Machine Learning develop
 The MLflow Tracking component is an API and UI for logging parameters, code versions, metrics, and output files when running your machine learning code and for later visualizing the results.
 We can use Azure Machine Learning as the backend of MLflow experiments while trigerring it from the Azure databricks. Azure Machine Learning workspace that provides a centralized, secure, and scalable location to store training metrics and artifacts.
 
+In order to configure MLflow Tracking and connect Azure Machine Learning as the backend for MLFlow experiments, we need to follow these steps ....
+
 ## Create Databricks Cluster:
+
+We need to create our own databricks compute cluster to run the experiments.
 
 ![Databricks Cluster](Images/DB_Cluster.JPG?raw=true)
 
  ## Install required packages: 
  
-We need to install the required packages.
+After we create the databricks cluster we need to install the required packages.
 
 ![Install Libraries](Images/DB_Cluster_Libraries.JPG?raw=true)
 
@@ -31,6 +35,8 @@ You can download the dataset and create table using UI inside Azure Databricks.
 
 
 ## Configure MLflow tracking to use AML: 
+
+We need to get your AML workspace object. From our AML workspace object, get the unique tracking URI address and then setup MLflow tracking URI to point to our AML workspace.
 
 ```
 import mlflow
@@ -48,11 +54,16 @@ mlflow.set_tracking_uri(tracking_uri)
 
 ## Define and Configure a MLflow Experiment:
 
+We need to define and set the experiment inside Azure Machine Learning.
+
 ```
 experiment_name = 'Penguin-ADB-MLflow-AML'
 mlflow.set_experiment(experiment_name)
 ```
+
 ## Run Experiment:
+
+Once we define and create the experiment we can start your training run with ` start_run()`
 
 ```
 with mlflow.start_run() as run:
@@ -62,6 +73,8 @@ with mlflow.start_run() as run:
 
 ## Check Model Metrices and Artifacts
 
+Once the experiment runs to success we can navigate to Azure Machine Learning workspace and check the metrics and artifacts inside the specific run.
+
 ![Model Metrics](Images/model_metric.JPG?raw=true)
 
 ![onfusion Matrix](Images/conf_mat.JPG?raw=true)
@@ -69,6 +82,8 @@ with mlflow.start_run() as run:
 ![Classification Report](Images/class_report.JPG?raw=true)
 
 ## Register the Model in Azure ML
+
+We can register the model from Azure Databricks to the Azure Machine Learning workspace.
 
 ```
 from azureml.core import Model
