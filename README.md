@@ -73,7 +73,7 @@ with mlflow.start_run() as run:
     ...
 ```
 
-## Check Model Metrices and Artifacts
+## Check Model Metrics and Artifacts
 
 Once the experiment runs to success we can navigate to Azure Machine Learning workspace and check the metrics and artifacts inside the specific run.
 
