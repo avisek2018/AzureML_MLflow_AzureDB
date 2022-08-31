@@ -98,3 +98,6 @@ model = Model.register(workspace=ws,
                        description='Model to predict Penguin Species.')
 ```
 
+After we execute the above code we can go to Azure ML workspace and verify the model registry.
+
+![Model Registry](Images/model_registry.JPG?raw=true)
