@@ -9,7 +9,9 @@ MLflow is an open-source product designed to manage the Machine Learning develop
 The MLflow Tracking component is an API and UI for logging parameters, code versions, metrics, and output files when running your machine learning code and for later visualizing the results.
 We can use Azure Machine Learning as the backend of MLflow experiments while trigerring it from the Azure databricks. Azure Machine Learning workspace that provides a centralized, secure, and scalable location to store training metrics and artifacts.
 
-In order to configure MLflow Tracking and connect Azure Machine Learning as the backend for MLFlow experiments, we need to follow these steps ....
+![Image Copyright Microsoft](Images/mlflow-diagram.png?raw=true)
+
+I assume you have the basic knowledge of creating Azure resources, storage account, Azure Databricks, and Azure ML workspace. In order to configure MLflow Tracking and connect Azure Machine Learning as the backend for MLFlow experiments, we need to follow these steps ....
 
 ## Create Databricks Cluster:
 
