@@ -19,7 +19,7 @@ We need to create our own databricks compute cluster to run the experiments.
 
 ![Databricks Cluster](Images/DB_Cluster.JPG?raw=true)
 
- ## Install required packages: 
+ ## Install Required Packages: 
  
 After we create the databricks cluster we need to install the required packages.
 
@@ -65,7 +65,7 @@ mlflow.set_experiment(experiment_name)
 
 ## Run Experiment:
 
-Once we define and create the experiment we can start your training run with ` start_run()`
+Once we define and create the experiment we can start our training run with ` start_run()`
 
 ```
 with mlflow.start_run() as run:
@@ -76,6 +76,8 @@ with mlflow.start_run() as run:
 ## Check Model Metrices and Artifacts
 
 Once the experiment runs to success we can navigate to Azure Machine Learning workspace and check the metrics and artifacts inside the specific run.
+
+![AML Experiment](Images/aml_experiment.JPG?raw=true)
 
 ![Model Metrics](Images/model_metric.JPG?raw=true)
 
