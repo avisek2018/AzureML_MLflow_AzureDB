@@ -1,4 +1,4 @@
-# Create, Run, and Track Azure Databricks Experiments in Azure Machine Learning and MLflow
+# Create, Run, and Track Azure Databricks Experiments in Azure Machine Learning using MLflow
 MLflow is an open-source product designed to manage the Machine Learning development lifecycle. It allows data scientists to train models, register those models, deploy the models, and manage model updates. MLflow has four components:
 
 -	MLflow Tracking
@@ -101,3 +101,6 @@ model = Model.register(workspace=ws,
 After we execute the above code we can go to Azure ML workspace and verify the model registry.
 
 ![Model Registry](Images/model_registry.JPG?raw=true)
+
+
+Thanks a ton to Microsoft Learning for some of the images and code segments. 
